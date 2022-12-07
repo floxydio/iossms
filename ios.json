@@ -1,0 +1,62 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"ContactsPhoneNumbers\"><param name=\"ios-package\" value=\"CDVContactsPhoneNumbers\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "*-Info.plist": {
+        "parents": {
+          "NSContactsUsageDescription": [
+            {
+              "xml": "<string>This app needs contacts access</string>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-contacts-phonenumbers": {
+      "CONTACTS_USAGE_DESCRIPTION": "This app needs contacts access",
+      "PACKAGE_NAME": "com.floxy.cordovasms"
+    },
+    "cordova-plugin-sms-receive": {
+      "PACKAGE_NAME": "com.floxy.cordovasms"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-contacts-phonenumbers.contactsPhoneNumbers",
+      "file": "plugins/cordova-plugin-contacts-phonenumbers/www/contactsPhoneNumbers.js",
+      "pluginId": "cordova-plugin-contacts-phonenumbers",
+      "clobbers": [
+        "navigator.contactsPhoneNumbers"
+      ]
+    },
+    {
+      "id": "cordova-plugin-sms-receive.SMSReceive",
+      "file": "plugins/cordova-plugin-sms-receive/www/SMSReceive.js",
+      "pluginId": "cordova-plugin-sms-receive",
+      "clobbers": [
+        "cordova.plugins.SMSReceive"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-contacts-phonenumbers": "0.0.12",
+    "cordova-plugin-sms-receive": "2.0.0"
+  }
+}
